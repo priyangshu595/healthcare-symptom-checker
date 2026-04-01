@@ -1,6 +1,8 @@
 import json
+import os
 from openai import OpenAI
-from app.config import OPENAI_API_KEY
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(
     api_key=OPENAI_API_KEY,
@@ -26,7 +28,7 @@ def analyze_symptoms(symptoms: str):
         """
 
         response = client.chat.completions.create(
-            model="openai/gpt-3.5-turbo",   # ✅ important
+            model="openai/gpt-3.5-turbo",  # 🔥 IMPORTANT
             messages=[{"role": "user", "content": prompt}],
             temperature=0.3
         )
