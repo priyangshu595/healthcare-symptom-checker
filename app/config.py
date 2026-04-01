@@ -1,0 +1,2 @@
+OPENAI_API_KEY = "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"
+MODEL_NAME = "gpt-4o-mini"
