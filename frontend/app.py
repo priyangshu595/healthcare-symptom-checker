@@ -7,7 +7,7 @@ symptoms = st.text_area("Enter your symptoms:")
 
 if st.button("Analyze"):
     response = requests.post(
-        "http://127.0.0.1:8000/analyze-symptoms",
+        "https://healthcare-symptom-checker-49wk.onrender.com/analyze-symptoms",
         json={"symptoms": symptoms}
     )
 
