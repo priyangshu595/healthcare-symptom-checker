@@ -6,7 +6,11 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(
     api_key=OPENAI_API_KEY,
-    base_url="https://openrouter.ai/api/v1"
+    base_url="https://openrouter.ai/api/v1",
+    default_headers={
+        "HTTP-Referer": "https://your-app-name.com",  # can be anything
+        "X-Title": "Healthcare Symptom Checker"
+    }
 )
 
 def analyze_symptoms(symptoms: str):
